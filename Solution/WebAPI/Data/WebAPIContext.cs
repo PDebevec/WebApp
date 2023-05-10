@@ -15,5 +15,17 @@ namespace WebAPI.Data
         }
 
         public DbSet<WebAPI.Region> Region { get; set; } = default!;
+
+        public DbSet<WebAPI.Country>? Country { get; set; }
+
+        public DbSet<WebAPI.Location>? Location { get; set; }
+
+        public DbSet<WebAPI.Job>? Job { get; set; }
+
+        public DbSet<WebAPI.Department>? Department { get; set; }
+
+        public DbSet<WebAPI.Employee>? Employee { get; set; }
+
+        public DbSet<WebAPI.Dependent>? Dependent { get; set; }
     }
 }
