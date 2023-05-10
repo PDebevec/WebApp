@@ -1,6 +1,6 @@
 /*Data for the table regions */
 SET IDENTITY_INSERT regions ON;
-  
+
 INSERT INTO regions(region_id,region_name) VALUES (1,'Europe');
 INSERT INTO regions(region_id,region_name) VALUES (2,'Americas');
 INSERT INTO regions(region_id,region_name) VALUES (3,'Asia');
