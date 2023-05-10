@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "Y+zVD1Ez+ZtIxCkmEl/G1Zzc4NWLHjRlvb3CYb9++x8=",
+  "Hash": "Z4DOg9lVaisaxfctdjT3UuEVG6ktqQOxGN+67a5aw/4=",
   "Source": "WebApp",
   "BasePath": "_content/WebApp",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\Peter\\Desktop\\2\\RPA\\WebApp\\Solution\\WebAPI\\WebAPI.csproj",
+      "Version": 2,
+      "Source": "WebAPI",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [
     {
       "Name": "WebApp\\wwwroot",
