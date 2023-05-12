@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "QekqXPrzlLSK7ofJRZ3VV0Fl9G8xuJ19xt90AfzdY9bwTj7+fdF+5vYfzdk1P4DnAtZKoV5VYZOpxWaWfElV3g==",
+  "dgSpecHash": "/1BlB4XE3fwF14hDiRTEwbrLvjulMtJO0gfSj3/RRek8IKmN9+hBJ+xvrDVyqwuHlw8xDmLaijEdMd4EpFVMrw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Peter\\Desktop\\2\\RPA\\WebApp\\Solution\\WebApp\\WebApp.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Peter\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\Peter\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
@@ -36,8 +36,10 @@
     "C:\\Users\\Peter\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.15\\microsoft.entityframeworkcore.6.0.15.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.15\\microsoft.entityframeworkcore.abstractions.6.0.15.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.15\\microsoft.entityframeworkcore.analyzers.6.0.15.nupkg.sha512",
+    "C:\\Users\\Peter\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.15\\microsoft.entityframeworkcore.design.6.0.15.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.15\\microsoft.entityframeworkcore.relational.6.0.15.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.15\\microsoft.entityframeworkcore.sqlserver.6.0.15.nupkg.sha512",
+    "C:\\Users\\Peter\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.15\\microsoft.entityframeworkcore.tools.6.0.15.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",

@@ -1,8 +1,55 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Domača stran";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-4">
+    <h1>Welcome to the HR Department</h1>
+    <p>This is the homepage for the HR department of our organization. Here you can find information about employees, departments, jobs, and locations.</p>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Zaposleni</h5>
+                        <p class="card-text">Glavna tabela, ki hrani podatke o yaposlenih na podjetju.</p>
+                        <p>Trenutno število zaposlenih: @{}</p>
+                        <a href="/Employee" class="btn btn-primary">Prikaži tabelo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Druge tabele</h5>
+                        <p class="card-text">Oglej, uredi, dodaj in briši podatke še iz drugih tabel.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Oddelki
+                                <a href="#" class="btn btn-primary">Pogled</a>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Delovna mesta
+                                <a href="#" class="btn btn-primary">Pogled</a>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Lokacije
+                                <a href="#" class="btn btn-primary">Pogled</a>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Države
+                                <a href="#" class="btn btn-primary">Pogled</a>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Programi
+                                <a href="#" class="btn btn-primary">Pogled</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using WebAPI.Data;
+
 namespace WebApp
 {
     public class Program
@@ -5,6 +8,9 @@ namespace WebApp
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            var connectionString = builder.Configuration.GetConnectionString("WebAPIContext");
+            builder.Services.AddDbContext<WebAPIContext>(options => options.UseSqlServer(connectionString));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -27,6 +33,7 @@ namespace WebApp
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+            
         }
     }
 }

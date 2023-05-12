@@ -280,3 +280,4 @@ C:\Users\Peter\Desktop\2\RPA\WebApp\Solution\WebApp\obj\Debug\net6.0\WebApp.MvcA
 C:\Users\Peter\Desktop\2\RPA\WebApp\Solution\WebApp\obj\Debug\net6.0\WebApp.csproj.CopyComplete
 C:\Users\Peter\Desktop\2\RPA\WebApp\Solution\WebApp\bin\Debug\net6.0\System.Net.Http.Formatting.dll
 C:\Users\Peter\Desktop\2\RPA\WebApp\Solution\WebApp\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Peter\Desktop\2\RPA\WebApp\Solution\WebApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
