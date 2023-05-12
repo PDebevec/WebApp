@@ -26,6 +26,6 @@ namespace WebAPI.Data
 
         public DbSet<WebAPI.Employee>? Employee { get; set; }
 
-        public DbSet<WebAPI.Dependent>? Dependent { get; set; }
+        //public DbSet<WebAPI.Dependent>? Dependent { get; set; }
     }
 }
