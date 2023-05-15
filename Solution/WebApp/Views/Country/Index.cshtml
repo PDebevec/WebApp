@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<WebAPI.Country>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Država";
 }
 
-<h1>Index</h1>
+<h1>Država</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Ustvari</a>
 </p>
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
             <th>
@@ -28,12 +28,12 @@
                 @Html.DisplayFor(modelItem => item.CountryName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Region.RegionId)
+                @Html.DisplayFor(modelItem => item.Region.RegionName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.CountryId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CountryId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CountryId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.CountryId">Uredi</a> |
+                <a asp-action="Details" asp-route-id="@item.CountryId">Podrobnosti</a> |
+                <a asp-action="Delete" asp-route-id="@item.CountryId">Izbriši</a>
             </td>
         </tr>
 }

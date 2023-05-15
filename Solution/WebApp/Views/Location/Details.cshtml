@@ -1,48 +1,48 @@
 ﻿@model WebAPI.Location
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Podrobnosti";
 }
 
-<h1>Details</h1>
+<h1>Podrobnosti</h1>
 
 <div>
-    <h4>Location</h4>
+    <h4>Id lokacije: @Model.LocationId</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StreetAddress)
+            Naslov
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.StreetAddress)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PostalCode)
+            Poštna številka
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PostalCode)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.City)
+            Mesto
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.City)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StateProvince)
+            Provinca
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.StateProvince)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Country)
+            Država
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Country.CountryId)
+            @Html.DisplayFor(model => model.Country.CountryName)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.LocationId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.LocationId">Uredi</a> |
+    <a asp-action="Index">Nazaj na tabelo</a>
 </div>

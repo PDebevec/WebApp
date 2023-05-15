@@ -1,25 +1,25 @@
 ﻿@model IEnumerable<WebAPI.Job>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Delovna mesta";
 }
 
-<h1>Index</h1>
+<h1>Delovna mesta</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Dodaj</a>
 </p>
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.JobTitle)
+                Naziv
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MinSalary)
+                Minimalna plača
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MaxSalary)
+                Maksimalna plača
             </th>
             <th></th>
         </tr>
@@ -37,9 +37,9 @@
                 @Html.DisplayFor(modelItem => item.MaxSalary)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.JobId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.JobId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.JobId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.JobId">Uredi</a> |
+                <a asp-action="Details" asp-route-id="@item.JobId">Podrobnosti</a> |
+                <a asp-action="Delete" asp-route-id="@item.JobId">Izbriši</a>
             </td>
         </tr>
 }

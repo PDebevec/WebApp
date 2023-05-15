@@ -1,31 +1,31 @@
 ﻿@model IEnumerable<WebAPI.Location>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Lokacije";
 }
 
-<h1>Index</h1>
+<h1>Lokacije</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Dodaj</a>
 </p>
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.StreetAddress)
+                Naslov
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PostalCode)
+                Poštna številka
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.City)
+                Mesto
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StateProvince)
+                Provinca
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Country)
+                Država
             </th>
             <th></th>
         </tr>
@@ -46,12 +46,12 @@
                 @Html.DisplayFor(modelItem => item.StateProvince)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Country.CountryId)
+                @Html.DisplayFor(modelItem => item.Country.CountryName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.LocationId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.LocationId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.LocationId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.LocationId">Uredi</a> |
+                <a asp-action="Details" asp-route-id="@item.LocationId">Podrobnosti</a> |
+                <a asp-action="Delete" asp-route-id="@item.LocationId">Izbriši</a>
             </td>
         </tr>
 }
