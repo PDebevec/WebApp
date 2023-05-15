@@ -12,11 +12,11 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CountrieController : ControllerBase
+    public class CountryController : ControllerBase
     {
         private readonly WebAPIContext _context;
 
-        public CountrieController(WebAPIContext context)
+        public CountryController(WebAPIContext context)
         {
             _context = context;
         }
