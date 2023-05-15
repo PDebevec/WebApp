@@ -1,72 +1,72 @@
 ﻿@model WebAPI.Employee
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Podrobnosti";
 }
 
-<h1>Details</h1>
+<h1>Podrobnosti</h1>
 
 <div>
-    <h4>Employee</h4>
+    <h4>Id zaposlenega: @Model.EmployeeId</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FirstName)
+            Ime
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FirstName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LastName)
+            Priimek
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.LastName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
+            E-pošta
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhoneNumber)
+            Telefonska številka
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HireDate)
+            Datum najema
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HireDate)
+            @Html.Raw(String.Format($"{Model.HireDate:dd, MMMM, yyyy}"))
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Salary)
+            Plača
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Salary)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Job)
+            Delovno mesto
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Job.JobId)
+            @Html.DisplayFor(model => model.Job.JobTitle)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Manager)
+            Vodja
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Manager.EmployeeId)
+            @Html.DisplayFor(model => model.Manager.FirstName) @Html.DisplayFor(model => model.Manager.LastName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Department)
+            Oddelek
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Department.DepartmentId)
+            @Html.DisplayFor(model => model.Department.DepartmentName)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.EmployeeId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.EmployeeId">Uredi</a> |
+    <a asp-action="Index">Nazan na tabelo</a>
 </div>

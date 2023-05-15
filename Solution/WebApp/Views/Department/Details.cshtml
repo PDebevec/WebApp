@@ -1,0 +1,48 @@
+﻿@model WebAPI.Department
+
+@{
+    ViewData["Title"] = "Podrobnosti";
+}
+
+<h1>Podrobnosti</h1>
+
+<div>
+    <h4>Id oddelka: @Model.DepartmentId</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Ime oddelka
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DepartmentName)
+        </dd>
+        <dt class = "col-sm-2">
+            Država, provinca
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Location.CountryId), @Html.DisplayFor(model => model.Location.StateProvince)
+        </dd>
+        <dt class="col-sm-2">
+            Mesto
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Location.City)
+        </dd>
+        <dt class="col-sm-2">
+            Poštna številka
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Location.PostalCode)
+        </dd>
+        <dt class="col-sm-2">
+            Naslov
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Location.StreetAddress)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.DepartmentId">Uredi</a> |
+    <a asp-action="Index">Nazaj na tabelo</a>
+</div>
