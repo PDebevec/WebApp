@@ -6,9 +6,6 @@
 
 <h1>Lokacije</h1>
 
-<p>
-    <a asp-action="Create">Dodaj</a>
-</p>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -27,7 +24,7 @@
             <th>
                 Država
             </th>
-            <th></th>
+            <th><a asp-action="Create">+ Dodaj lokacijo</a></th>
         </tr>
     </thead>
     <tbody>
@@ -50,8 +47,8 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.LocationId">Uredi</a> |
-                <a asp-action="Details" asp-route-id="@item.LocationId">Podrobnosti</a> |
-                <a asp-action="Delete" asp-route-id="@item.LocationId">Izbriši</a>
+                @*<a asp-action="Details" asp-route-id="@item.LocationId">Podrobnosti</a> |*@
+                <a asp-action="Delete" asp-route-id="@item.LocationId" onclick="return confirm('Izbrisali boste lokacijo: @item.CountryId, @item.City, @item.StreetAddress')">Izbriši</a>
             </td>
         </tr>
 }

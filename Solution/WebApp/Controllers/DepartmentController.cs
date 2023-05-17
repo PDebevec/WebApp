@@ -50,7 +50,7 @@ namespace WebApp.Controllers
         {
             //ViewData["LocationId"] = new SelectList(_context.Location, "LocationId", "LocationId");
             var data = _context.Location
-                .Select(location => new { LocationId = location.LocationId, DisplayName = $"{location.LocationId}, {location.City}, {location.StreetAddress}" })
+                .Select(location => new { LocationId = location.LocationId, DisplayName = $"{location.CountryId}: {location.StateProvince} {location.StreetAddress}" })
                 .ToList();
             ViewBag.dropdown = new SelectList(data, "LocationId", "DisplayName");
             return View();
@@ -130,8 +130,8 @@ namespace WebApp.Controllers
             return View(department);
         }
 
-        // GET: Department/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+		// GET: Department/Delete/5
+		public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Department == null)
             {
@@ -146,8 +146,10 @@ namespace WebApp.Controllers
                 return NotFound();
             }
 
-            return View(department);
-        }
+            await DeleteConfirmed(id.Value);
+
+			return RedirectToAction(nameof(Index));
+		}
 
         // POST: Department/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -163,7 +165,7 @@ namespace WebApp.Controllers
             {
                 _context.Department.Remove(department);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

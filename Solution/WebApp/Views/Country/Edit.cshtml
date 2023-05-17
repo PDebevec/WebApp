@@ -1,12 +1,12 @@
 ﻿@model WebAPI.Country
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Uredi";
 }
 
-<h1>Edit</h1>
+<h1>Uredi</h1>
 
-<h4>Country</h4>
+<h4>Id države: @Model.CountryId</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,24 +14,24 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CountryId" />
             <div class="form-group">
-                <label asp-for="CountryName" class="control-label"></label>
+                <label asp-for="CountryName" class="control-label">Ime države</label>
                 <input asp-for="CountryName" class="form-control" />
                 <span asp-validation-for="CountryName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RegionId" class="control-label"></label>
-                <select asp-for="RegionId" class="form-control" asp-items="ViewBag.RegionId"></select>
+                <label asp-for="RegionId" class="control-label">Regija</label>
+                <select asp-for="RegionId" class="form-control" asp-items="ViewBag.dropdown"></select>
                 <span asp-validation-for="RegionId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Shrani spremenbe" class="btn btn-primary c-btn" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Nazaj na tabelo</a>
 </div>
 
 @section Scripts {

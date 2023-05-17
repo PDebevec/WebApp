@@ -6,9 +6,6 @@
 
 <h1>Delovna mesta</h1>
 
-<p>
-    <a asp-action="Create">Dodaj</a>
-</p>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -21,7 +18,7 @@
             <th>
                 Maksimalna plača
             </th>
-            <th></th>
+            <th><a asp-action="Create">+ Dodaj delovno mesto</a></th>
         </tr>
     </thead>
     <tbody>
@@ -38,8 +35,8 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.JobId">Uredi</a> |
-                <a asp-action="Details" asp-route-id="@item.JobId">Podrobnosti</a> |
-                <a asp-action="Delete" asp-route-id="@item.JobId">Izbriši</a>
+                @*<a asp-action="Details" asp-route-id="@item.JobId">Podrobnosti</a> |*@
+                <a asp-action="Delete" asp-route-id="@item.JobId" onclick="return confirm('Izbrisali boste delovno mesto: @item.JobTitle!')">Izbriši</a>
             </td>
         </tr>
 }

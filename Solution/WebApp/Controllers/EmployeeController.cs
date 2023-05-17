@@ -50,10 +50,25 @@ namespace WebApp.Controllers
         // GET: Employee/Create
         public IActionResult Create()
         {
-            ViewData["DepartmentId"] = new SelectList(_context.Department, "DepartmentId", "DepartmentId");
-            ViewData["JobId"] = new SelectList(_context.Job, "JobId", "JobId");
-            ViewData["ManagerId"] = new SelectList(_context.Employee, "EmployeeId", "EmployeeId");
-            return View();
+            //ViewData["DepartmentId"] = new SelectList(_context.Department, "DepartmentId", "DepartmentId");
+            ViewBag.dropdownDepartment = new SelectList(_context.Department
+                .Select(department => new { DepartmentId = department.DepartmentId, DisplayName = $"{department.DepartmentId}: {department.DepartmentName}"})
+                .ToList(),
+				"DepartmentId", "DisplayName"
+				);
+            //ViewData["JobId"] = new SelectList(_context.Job, "JobId", "JobId");
+			ViewBag.dropdownJob= new SelectList(_context.Job
+				.Select(job => new { JobId = job.JobId, DisplayName = $"{job.JobId}: {job.JobTitle}" })
+				.ToList(),
+				"JobId", "DisplayName"
+				);
+			//ViewData["ManagerId"] = new SelectList(_context.Employee, "EmployeeId", "EmployeeId");
+			ViewBag.dropdownManager= new SelectList(_context.Employee
+				.Select(manager => new { ManagerId = manager.EmployeeId, DisplayName = $"{manager.EmployeeId}: {manager.FirstName} {manager.LastName}, {manager.Job.JobTitle}" })
+				.ToList(),
+				"ManagerId", "DisplayName"
+				);
+			return View();
         }
 
         // POST: Employee/Create
@@ -88,10 +103,25 @@ namespace WebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["DepartmentId"] = new SelectList(_context.Department, "DepartmentId", "DepartmentId", employee.DepartmentId);
-            ViewData["JobId"] = new SelectList(_context.Job, "JobId", "JobId", employee.JobId);
-            ViewData["ManagerId"] = new SelectList(_context.Employee, "EmployeeId", "EmployeeId", employee.ManagerId);
-            return View(employee);
+			//ViewData["DepartmentId"] = new SelectList(_context.Department, "DepartmentId", "DepartmentId");
+			ViewBag.dropdownDepartment = new SelectList(_context.Department
+				.Select(department => new { DepartmentId = department.DepartmentId, DisplayName = $"{department.DepartmentId}: {department.DepartmentName}" })
+				.ToList(),
+				"DepartmentId", "DisplayName"
+				);
+			//ViewData["JobId"] = new SelectList(_context.Job, "JobId", "JobId");
+			ViewBag.dropdownJob = new SelectList(_context.Job
+				.Select(job => new { JobId = job.JobId, DisplayName = $"{job.JobId}: {job.JobTitle}" })
+				.ToList(),
+				"JobId", "DisplayName"
+				);
+			//ViewData["ManagerId"] = new SelectList(_context.Employee, "EmployeeId", "EmployeeId");
+			ViewBag.dropdownManager = new SelectList(_context.Employee
+				.Select(manager => new { ManagerId = manager.EmployeeId, DisplayName = $"{manager.EmployeeId}: {manager.FirstName} {manager.LastName}, {manager.Job.JobTitle}" })
+				.ToList(),
+				"ManagerId", "DisplayName"
+				);
+			return View(employee);
         }
 
         // POST: Employee/Edit/5

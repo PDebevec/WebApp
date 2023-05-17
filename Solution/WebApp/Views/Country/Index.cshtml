@@ -1,24 +1,21 @@
 ﻿@model IEnumerable<WebAPI.Country>
 
 @{
-    ViewData["Title"] = "Država";
+    ViewData["Title"] = "Države";
 }
 
-<h1>Država</h1>
+<h1>Države</h1>
 
-<p>
-    <a asp-action="Create">Ustvari</a>
-</p>
 <table class="table table-hover">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CountryName)
+                Država
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Region)
+                Regija
             </th>
-            <th></th>
+            <th><a asp-action="Create">+ Dodaj državo</a></th>
         </tr>
     </thead>
     <tbody>
@@ -32,8 +29,8 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.CountryId">Uredi</a> |
-                <a asp-action="Details" asp-route-id="@item.CountryId">Podrobnosti</a> |
-                <a asp-action="Delete" asp-route-id="@item.CountryId">Izbriši</a>
+                @*<a asp-action="Details" asp-route-id="@item.CountryId">Podrobnosti</a> |*@
+                <a asp-action="Delete" asp-route-id="@item.CountryId" onclick="return confirm('Izbrisali boste državo: @item.CountryName!')">Izbriši</a>
             </td>
         </tr>
 }

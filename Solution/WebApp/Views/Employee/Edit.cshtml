@@ -39,8 +39,8 @@
                 <span asp-validation-for="HireDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="JobId" class="control-label">Id delovnega mesta</label>
-                <select asp-for="JobId" class="form-control" asp-items="ViewBag.JobId"></select>
+                <label asp-for="JobId" class="control-label">Delovno mesto</label>
+                <select asp-for="JobId" class="form-control" asp-items="ViewBag.dropdownJob"></select>
                 <span asp-validation-for="JobId" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -49,18 +49,18 @@
                 <span asp-validation-for="Salary" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ManagerId" class="control-label">Id vodje</label>
-                <select asp-for="ManagerId" class="form-control" asp-items="ViewBag.ManagerId"></select>
+                <label asp-for="ManagerId" class="control-label">Vodja</label>
+                <select asp-for="ManagerId" class="form-control" asp-items="ViewBag.dropdownManager"></select>
                 <span asp-validation-for="ManagerId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DepartmentId" class="control-label">Id oddelka</label>
-                <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.DepartmentId"></select>
+                <label asp-for="DepartmentId" class="control-label">Oddelek</label>
+                <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.dropdownDepartment"></select>
                 <span asp-validation-for="DepartmentId" class="text-danger"></span>
             </div>
             <br />
             <div class="form-group">
-                <input type="submit" value="Shrani spremenbe" class="btn btn-primary" />
+                <input type="submit" value="Shrani spremenbe" class="btn btn-primary c-btn" />
             </div>
         </form>
     </div>

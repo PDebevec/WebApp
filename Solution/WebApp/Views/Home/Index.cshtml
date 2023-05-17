@@ -3,23 +3,33 @@
 }
 
 <div class="container mt-4">
-    <h1>Welcome to the HR Department</h1>
-    <p>This is the homepage for the HR department of our organization. Here you can find information about employees, departments, jobs, and locations.</p>
+    <h1>Dobrodošli v kadrovskem oddelku</h1>
+    <p>To je domača stran kadrovske službe naše organizacije. Tukaj lahko najdete informacije o zaposlenih, oddelkih, delovnih mestih in lokacijah.</p>
 
     <div class="container mt-4">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Zaposleni</h5>
-                        <p class="card-text">Glavna tabela, ki hrani podatke o yaposlenih na podjetju.</p>
-                        <p>Trenutno število zaposlenih: @{}</p>
-                        <a href="/Employee" class="btn btn-primary">Prikaži tabelo</a>
+                        <p class="card-text">Glavna tabela, ki hrani podatke o zaposlenih na podjetju.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Trenutno število zaposlenih: <b>@ViewBag.NofEmployees</b>
+                            </li>
+                            <li class="list-group-item">
+                                @foreach (var item in ViewBag.NofEinDepartment)
+                                {
+                                    <div>@item.DepartmentName: <b>@item.EmployeeCount</b></div>
+                                }
+                            </li>
+                        </ul>
+                        <a href="/Employee" class="btn btn-primary c-btn">Prikaži tabelo</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Druge tabele</h5>

@@ -6,9 +6,6 @@
 
 <h1>Oddelki</h1>
 
-<p>
-    <a asp-action="Create">Dodaj</a>
-</p>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -18,7 +15,7 @@
             <th>
                 Lokacija
             </th>
-            <th></th>
+			<th><a asp-action="Create">+ Dodaj oddelek</a></th>
         </tr>
     </thead>
     <tbody>
@@ -32,8 +29,8 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.DepartmentId">Uredi</a> |
-                <a asp-action="Details" asp-route-id="@item.DepartmentId">Podrobnosti</a> |
-                <a asp-action="Delete" asp-route-id="@item.DepartmentId">Izbriši</a>
+                @*<a asp-action="Details" asp-route-id="@item.DepartmentId">Podrobnosti</a> |*@
+                <a asp-action="Delete" asp-route-id="@item.DepartmentId" onclick="return confirm('Izbrisali boste oddelek: @item.DepartmentName')">Izbriši</a>
             </td>
         </tr>
 }

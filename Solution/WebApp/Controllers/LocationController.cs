@@ -48,7 +48,10 @@ namespace WebApp.Controllers
         // GET: Location/Create
         public IActionResult Create()
         {
-            ViewData["CountryId"] = new SelectList(_context.Country, "CountryId", "CountryId");
+            //ViewData["CountryId"] = new SelectList(_context.Country, "CountryId", "CountryId");
+            ViewBag.dropdown = new SelectList(_context.Country
+                .Select(country => new { CountryId = country.CountryId, DisplayName = $"{country.CountryId}: {country.CountryName}"})
+                .ToList(), "CountryId", "DisplayName");
             return View();
         }
 
@@ -82,7 +85,10 @@ namespace WebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["CountryId"] = new SelectList(_context.Country, "CountryId", "CountryId", location.CountryId);
+            //ViewData["CountryId"] = new SelectList(_context.Country, "CountryId", "CountryId");
+            ViewBag.dropdown = new SelectList(_context.Country
+                .Select(country => new { CountryId = country.CountryId, DisplayName = $"{country.CountryId}: {country.CountryName}" })
+                .ToList(), "CountryId", "DisplayName");
             return View(location);
         }
 
@@ -138,8 +144,10 @@ namespace WebApp.Controllers
                 return NotFound();
             }
 
-            return View(location);
-        }
+			await DeleteConfirmed(id.Value);
+
+			return RedirectToAction(nameof(Index));
+		}
 
         // POST: Location/Delete/5
         [HttpPost, ActionName("Delete")]

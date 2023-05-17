@@ -6,16 +6,14 @@
 
 <h1>Regije</h1>
 
-<p>
-    <a asp-action="Create">Dodaj</a>
-</p>
+
 <table class="table table-hoverd">
     <thead>
         <tr>
             <th>
                 Ime regije
             </th>
-            <th></th>
+            <th><a asp-action="Create">+ Dodaj regijo</a></th>
         </tr>
     </thead>
     <tbody>
@@ -26,8 +24,9 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.RegionId">Uredi</a> |
-                <a asp-action="Details" asp-route-id="@item.RegionId">Podrobnosti</a> |
-                <a asp-action="Delete" asp-route-id="@item.RegionId">Izbriši</a>
+                @*<a asp-action="Details" asp-route-id="@item.RegionId">Podrobnosti</a> |*@
+                @*<a asp-action="Delete" asp-route-id="@item.RegionId">Izbriši</a>*@
+                <a asp-action="Delete" asp-route-id="@item.RegionId" onclick="return confirm('Izbrisali boste regijo: @item.RegionName!')">Izbriši</a>
             </td>
         </tr>
 }

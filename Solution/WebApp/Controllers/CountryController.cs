@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -48,7 +49,10 @@ namespace WebApp.Controllers
         // GET: Country/Create
         public IActionResult Create()
         {
-            ViewData["RegionId"] = new SelectList(_context.Region, "RegionId", "RegionId");
+            //ViewData["RegionId"] = new SelectList(_context.Region, "RegionId", "RegionId");
+            ViewBag.dropdown = new SelectList(_context.Region
+                .Select(region => new { RegionId = region.RegionId, DropDown = $"{region.RegionId}: {region.RegionName}"})
+                .ToList(), "RegionId", "DropDown");
             return View();
         }
 
@@ -82,7 +86,10 @@ namespace WebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["RegionId"] = new SelectList(_context.Region, "RegionId", "RegionId", country.RegionId);
+            //ViewData["RegionId"] = new SelectList(_context.Region, "RegionId", "RegionId");
+            ViewBag.dropdown = new SelectList(_context.Region
+                .Select(region => new { RegionId = region.RegionId, DropDown = $"{region.RegionId}: {region.RegionName}" })
+                .ToList(), "RegionId", "DropDown");
             return View(country);
         }
 
@@ -138,8 +145,10 @@ namespace WebApp.Controllers
                 return NotFound();
             }
 
-            return View(country);
-        }
+			await DeleteConfirmed(id);
+
+			return RedirectToAction(nameof(Index));
+		}
 
         // POST: Country/Delete/5
         [HttpPost, ActionName("Delete")]

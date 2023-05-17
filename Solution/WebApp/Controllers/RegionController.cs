@@ -133,8 +133,10 @@ namespace WebApp.Controllers
                 return NotFound();
             }
 
-            return View(region);
-        }
+			await DeleteConfirmed(id.Value);
+
+			return RedirectToAction(nameof(Index));
+		}
 
         // POST: Region/Delete/5
         [HttpPost, ActionName("Delete")]

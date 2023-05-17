@@ -1,12 +1,12 @@
 ﻿@model WebAPI.Location
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Uredi";
 }
 
-<h1>Edit</h1>
+<h1>Uredi</h1>
 
-<h4>Location</h4>
+<h4>Id lokacije: @Model.LocationId</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,39 +14,39 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="LocationId" />
             <div class="form-group">
-                <label asp-for="StreetAddress" class="control-label"></label>
+                <label asp-for="StreetAddress" class="control-label">Naslov</label>
                 <input asp-for="StreetAddress" class="form-control" />
                 <span asp-validation-for="StreetAddress" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PostalCode" class="control-label"></label>
+                <label asp-for="PostalCode" class="control-label">Poštna številka</label>
                 <input asp-for="PostalCode" class="form-control" />
                 <span asp-validation-for="PostalCode" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
+                <label asp-for="City" class="control-label">Mesto</label>
                 <input asp-for="City" class="form-control" />
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StateProvince" class="control-label"></label>
+                <label asp-for="StateProvince" class="control-label">Provinca</label>
                 <input asp-for="StateProvince" class="form-control" />
                 <span asp-validation-for="StateProvince" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CountryId" class="control-label"></label>
-                <select asp-for="CountryId" class="form-control" asp-items="ViewBag.CountryId"></select>
+                <label asp-for="CountryId" class="control-label">Država</label>
+                <select asp-for="CountryId" class="form-control" asp-items="ViewBag.dropdown"></select>
                 <span asp-validation-for="CountryId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Shrani spremenbe" class="btn btn-primary c-btn" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Nazaj na tabelo</a>
 </div>
 
 @section Scripts {
