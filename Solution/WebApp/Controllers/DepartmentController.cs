@@ -22,7 +22,7 @@ namespace WebApp.Controllers
         // GET: Department
         public async Task<IActionResult> Index()
         {
-            var webAPIContext = _context.Department.Include(d => d.Location);
+            var webAPIContext = _context.Department!.Include(d => d.Location);
             return View(await webAPIContext.ToListAsync());
         }
 

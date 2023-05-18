@@ -20,15 +20,15 @@ namespace WebApp.Controllers
         public async Task<IActionResult> Index()
         {
             //število zaposlenih
-            ViewBag.NofEmployees = _context.Employee.Count();
+            ViewBag.NofEmployees = _context.Employee!.Count();
 
             //število zaposlenih v vsakem oddelku
-            var departmentCounts = await _context.Employee
+            var departmentCounts = await _context.Employee!
                 .GroupBy(e => e.DepartmentId)
                 .Select(g => new { DepartmentId = g.Key, EmployeeCount = g.Count() })
                 .ToListAsync();
 
-            var departments = await _context.Department.ToListAsync();
+            var departments = await _context.Department!.ToListAsync();
 
             ViewBag.NofEinDepartment = departmentCounts
                 .Join(departments,

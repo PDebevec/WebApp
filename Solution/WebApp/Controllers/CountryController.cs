@@ -23,7 +23,7 @@ namespace WebApp.Controllers
         // GET: Country
         public async Task<IActionResult> Index()
         {
-            var webAPIContext = _context.Country.Include(c => c.Region);
+            var webAPIContext = _context.Country!.Include(c => c.Region);
             return View(await webAPIContext.ToListAsync());
         }
 
