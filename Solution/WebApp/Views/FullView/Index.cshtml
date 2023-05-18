@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="accordion">
+    @foreach(var item in ViewBag.data)
+    {
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@item.htmlId" aria-expanded="false" aria-controls="collapseTwo">
+                    @item.Department
+                </button>
+            </h2>
+            <div id="@item.htmlId" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    @foreach (var e in item.Employees)
+                    {
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@e.FirstName" aria-expanded="false" aria-controls="collapseTwo">
+                                        <b>@e.FirstName @e.LastName:</b>&nbsp<i>@e.JobTitle</i>
+                                    </button>
+                                </h2>
+                                <div id="@e.FirstName" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="container">
+                                            <div class="row row-cols-2">
+                                                <div class="col">
+                                                    <b>Manager:</b>
+                                                </div>
+                                                <div class="col">
+                                                    <b>Location:</b>
+                                                </div>
+                                                <div class="col">
+                                                    <ul class="list-unstyled">
+                                                        <li>@e.Manager.FirstName @e.Manager.LastName</li>
+                                                        <li>@e.Manager.JobTitle</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col">
+                                                    <ul class="list-unstyled">
+                                                        <li>@e.Location.Address</li>
+                                                        <li>@e.Location.PostalCode @e.Location.City@if(@e.Location.Province != null)
+                                                            {<neki>,</neki> @e.Location.Province}</li>
+                                                        <li>@e.Location.Country</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
